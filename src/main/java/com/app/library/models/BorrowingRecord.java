@@ -1,29 +1,33 @@
-package com.app.library.model;
+package com.app.library.models;
 
 import java.time.LocalDate;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class BorrowingRecord {
 
     private Long id;
-    private Book book;
-    private Member member;
+
+    @JsonProperty("bookId")
+    private Long bookId;
+
+    @JsonProperty("memberId")
+    private Long memberId;
 
     private LocalDate borrowDate;
     private LocalDate returnDate;
     private LocalDate dueDate;
 
-    // Default constructor
-    public BorrowingRecord() {}
+    public BorrowingRecord() {
+    }
 
-    // Parameterized constructor
-    public BorrowingRecord(Book book, Member member, LocalDate borrowDate, LocalDate dueDate) {
-        this.book = book;
-        this.member = member;
+    public BorrowingRecord(Long bookId, Long memberId, LocalDate borrowDate, LocalDate dueDate) {
+        this.bookId = bookId;
+        this.memberId = memberId;
         this.borrowDate = borrowDate;
         this.dueDate = dueDate;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -32,20 +36,20 @@ public class BorrowingRecord {
         this.id = id;
     }
 
-    public Book getBook() {
-        return book;
+    public Long getBookId() {
+        return bookId;
     }
 
-    public void setBook(Book book) {
-        this.book = book;
+    public void setBookId(Long bookId) {
+        this.bookId = bookId;
     }
 
-    public Member getMember() {
-        return member;
+    public Long getMemberId() {
+        return memberId;
     }
 
-    public void setMember(Member member) {
-        this.member = member;
+    public void setMember(Long memberId) {
+        this.memberId = memberId;
     }
 
     public LocalDate getBorrowDate() {
@@ -72,13 +76,12 @@ public class BorrowingRecord {
         this.dueDate = dueDate;
     }
 
-    // toString
     @Override
     public String toString() {
         return "BorrowingRecord{" +
                 "id=" + id +
-                ", book=" + book +
-                ", member=" + member +
+                ", bookId=" + bookId +
+                ", memberId=" + memberId +
                 ", borrowDate=" + borrowDate +
                 ", returnDate=" + returnDate +
                 ", dueDate=" + dueDate +

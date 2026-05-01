@@ -1,4 +1,4 @@
-package com.app.library.model;
+package com.app.library.models;
 
 import java.time.LocalDate;
 
@@ -11,10 +11,9 @@ public class Member {
     private LocalDate startDate;
     private LocalDate endDate;
 
-    // Default constructor
-    public Member() {}
+    public Member() {
+    }
 
-    // Parameterized constructor
     public Member(String name, String email, String phoneNumber, LocalDate startDate, LocalDate endDate) {
         this.name = name;
         this.email = email;
@@ -23,7 +22,6 @@ public class Member {
         this.endDate = endDate;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -72,7 +70,6 @@ public class Member {
         this.endDate = endDate;
     }
 
-    // toString
     @Override
     public String toString() {
         return "Member{" +

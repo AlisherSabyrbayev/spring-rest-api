@@ -1,4 +1,4 @@
-package com.app.library.model;
+package com.app.library.models;
 
 public class Book {
 
@@ -10,10 +10,9 @@ public class Book {
     private String genre;
     private int availableCopies;
 
-    // Default constructor
-    public Book() {}
+    public Book() {
+    }
 
-    // Parameterized constructor
     public Book(String title, String author, int publicationYear, String genre, int availableCopies) {
         this.title = title;
         this.author = author;
@@ -22,7 +21,6 @@ public class Book {
         this.availableCopies = availableCopies;
     }
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
@@ -71,7 +69,6 @@ public class Book {
         this.availableCopies = availableCopies;
     }
 
-    // toString
     @Override
     public String toString() {
         return "Book{" +
